@@ -42,7 +42,7 @@ const App = ()=>{
       <input type="text" placeholder="Enter some text" onChange={(e) =>settext(e.target.value)}/>
 
       <h1>character is {text.length}</h1>
-
+      <h1>sab okay haina</h1>
     </div>
   )
 }
