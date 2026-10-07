@@ -1,46 +1,50 @@
-import React from 'react'
-// import User from './components/user'
-import User from "./assets/components/user";
+import React, { useEffect, useState } from "react";
 
-const App = () => {
+// const App = () => {
 
-  // const Usename = (name)=>{
-  //   console.log("name is " , name)
-  // }
+//   // Text ko store karne ke liye state
+//   const [text, setText] = useState("");
 
-  // return (
-  //   <div>
-  //     <h1>parent componet</h1>
+//   // Jab text change hoga, ye effect chalega
+//   useEffect(() => {
+//     console.log("Characters:", text.length);
+//   }, [text]);
 
-  //     <User sendname={Usename}/>
+//   return (
+//     <div>
+//       <h1>Character Counter</h1>
 
-  //   </div>
-  // )
+//       <input
+//         type="text"
+//         placeholder="Type something..."
+//         value={text}
+//         onChange={(e) => setText(e.target.value)}
+//       />
 
-  // const getage= (age)=>{
-  //   console.log("your age is" , age)
-  // }
+//       <h2>Characters: {text.length}</h2>
+//     </div>
+//   );
+// };
 
-  // return (
-  //   <div>
-  //     <h1> app page</h1>
 
-  //     <User age = {getage}/>
-  //   </div>
-  // )
+const App = ()=>{
+  const [text , settext]=useState("")
 
-  const getuserdata = (data)=>{
-    console.log("data is " ,data)
-  }
+  useEffect(()=>{
+    console.log("Text length is", text.length)
+  })
+
 
   return (
     <div>
-      <h1> app</h1>
+      <h1>My application</h1>
 
-      <User  userdata= {getuserdata}/>
+      <input type="text" placeholder="Enter some text" onChange={(e) =>settext(e.target.value)}/>
+
+      <h1>character is {text.length}</h1>
+
     </div>
   )
-
 }
 
-export default App
+export default App;
